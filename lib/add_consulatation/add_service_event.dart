@@ -1,12 +1,22 @@
-part of 'add_consultation_bloc.dart';
+part of 'add_service_bloc.dart';
 
 @immutable
-abstract class AddConsultationEvent {}
+abstract class AddServiceEvent {}
 
-class SelectService extends AddConsultationEvent {
+class SelectService extends AddServiceEvent {
   final String service;
 
   SelectService(this.service);
 }
 
-class AddConsultation extends AddConsultationEvent {}
+class AddConsultation extends AddServiceEvent {
+  final String selectedType;
+
+  AddConsultation(this.selectedType);
+}
+
+class FillValues extends AddServiceEvent {
+  final Consultation consultation;
+
+  FillValues(this.consultation);
+}

@@ -1,19 +1,19 @@
-part of 'add_consultation_bloc.dart';
+part of 'add_service_bloc.dart';
 
 @immutable
-abstract class AddConsultationState {}
+abstract class AddServiceState {}
 
-class AddConsultationInitial extends AddConsultationState {}
+class AddConsultationInitial extends AddServiceState {}
 
-class SelectServiceScreen extends AddConsultationState {
+class SelectServiceScreen extends AddServiceState {
   final String selectedService;
-  final List<String> services;
 
-  SelectServiceScreen({this.selectedService = "", required this.services});
+  SelectServiceScreen({this.selectedService = ""});
 }
 
-class AddConsultationScreen extends AddConsultationState {
+class AddConsultationScreen extends AddServiceState {
+  final String selected;
   final Consultation consultation;
 
-  AddConsultationScreen(this.consultation);
+  AddConsultationScreen({required this.consultation, this.selected = ""});
 }

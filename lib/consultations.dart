@@ -77,8 +77,9 @@ class _ConsultationsState extends State<Consultations>
                                 color: blue),
                             child: IconButton(
                                 onPressed: () async {
-                                  Navigator.of(context)
+                                  await Navigator.of(context)
                                       .push(ServiceSelection());
+                                  setState(() {});
                                 },
                                 icon: Icon(
                                   Icons.add,
